@@ -1,0 +1,921 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jayhind Pal</title>
+    <link rel="icon" type="image/png" href="./image/logo.png" />
+   
+   
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.15.1/devicon.min.css">
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    
+    
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/newcss.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+  </head>
+
+  <body oncontextmenu="return false" class="bg-pink-100">
+    <header class="header bg-white shadow-md dark:bg-gray-900 transition-colors duration-300" id="header">
+      <nav class="nav container  mx-auto px-6 py-3 flex justify-between items-center font-inter">
+          <!-- Logo -->
+          <a href="#" class="nav__logo flex items-center text-3xl font-extrabold text-gray-800 dark:text-white">
+              Portfolio
+          </a>
+  
+          <!-- Navigation Menu -->
+          <div class="nav__menu hidden md:flex md:space-x-6 bg-white/80 backdrop-blur-md rounded-lg px-6 py-3 shadow-md" id="nav-menu">
+              <ul class="nav__list flex space-x-6">
+                  <li class="nav__item">
+                      <a href="#home" class="nav__link text-xl font-semibold text-gray-700 dark:text-gray-200 transition relative 
+                      hover:text-blue-600 dark:hover:text-purple-400 hover:underline hover:underline-offset-4">Home</a>
+                  </li>
+                  <li class="nav__item">
+                      <a href="#about" class="nav__link text-lg text-gray-700 dark:text-gray-200 transition relative 
+                      hover:text-blue-600 dark:hover:text-purple-400 hover:underline hover:underline-offset-4">About</a>
+                  </li>
+                  <li class="nav__item">
+                      <a href="#skills" class="nav__link text-xl font-bold text-gray-700 dark:text-gray-200 transition relative 
+                      hover:text-blue-600 dark:hover:text-purple-400 hover:underline hover:underline-offset-4">Skills</a>
+                  </li>
+                  <li class="nav__item">
+                      <a href="#services" class="nav__link text-lg text-gray-700 dark:text-gray-200 transition relative 
+                      hover:text-blue-600 dark:hover:text-purple-400 hover:underline hover:underline-offset-4">Services</a>
+                  </li>
+                  <li class="nav__item">
+                      <a href="#qualification" class="nav__link text-xl font-semibold text-gray-700 dark:text-gray-200 transition relative 
+                      hover:text-blue-600 dark:hover:text-purple-400 hover:underline hover:underline-offset-4">Qualification</a>
+                  </li>
+                  <li class="nav__item">
+                      <a href="#portfolio" class="nav__link text-lg text-gray-700 dark:text-gray-200 transition relative 
+                      hover:text-blue-600 dark:hover:text-purple-400 hover:underline hover:underline-offset-4">Projects</a>
+                  </li>
+                  <li class="nav__item relative">
+                      <a href="#contact" class="nav__link text-lg font-medium text-gray-700 dark:text-gray-900 opacity-80 dark:opacity-30 transition-all duration-300 
+                      hover:text-blue-600 dark:hover:text-purple-400 hover:underline hover:underline-offset-4">Contact-Me</a>
+                  </li>
+              </ul>
+          </div>
+  
+          <!-- Navigation Buttons -->
+          <div class="nav__btns flex items-center space-x-4 relative">
+              <!-- Dark Mode Toggle Button -->
+              <i class="uil uil-moon change-theme text-gray-700 hover:text-gray-900 dark:text-white cursor-pointer text-2xl z-10" id="theme-button"></i>
+  
+              <!-- Mobile Menu Toggle Button -->
+              <button class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 shadow-sm md:hidden" id="nav-toggle">
+                  <i class="uil uil-apps text-gray-700 dark:text-white text-2xl"></i>
+              </button>
+          </div>
+      </nav>
+  </header>
+  
+  
+  
+  
+  
+  
+  
+  
+  <script>
+      const themeButton = document.getElementById("theme-button");
+      const darkTheme = "dark";
+      const iconTheme = "uil-sun";
+  
+      // Check previously selected theme (if any)
+      if (localStorage.getItem("selected-theme") === "dark") {
+          document.documentElement.classList.add(darkTheme);
+          themeButton.classList.replace("uil-moon", "uil-sun");
+      }
+  
+      // Toggle dark mode
+      themeButton.addEventListener("click", () => {
+          document.documentElement.classList.toggle(darkTheme);
+          themeButton.classList.toggle(iconTheme);
+  
+          // Store preference
+          localStorage.setItem("selected-theme", document.documentElement.classList.contains(darkTheme) ? "dark" : "light");
+      });
+  </script>
+  
+
+    <!-- main-->
+
+    <main class="main">
+      <!--========================= Home =====================-->
+
+      <section class="relative flex items-center justify-center min-h-screen py-20" id="home">
+        <!-- Background Video -->
+        <div class="absolute inset-0 overflow-hidden">
+          <video autoplay muted loop class="w-full h-full object-cover brightness-50">
+            <source src="https://videos.pexels.com/video-files/2759484/2759484-sd_640_360_30fps.mp4" type="video/mp4" />
+          </video>
+        </div>
+      
+        <!-- Main Content -->
+        <div class="relative z-10 container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center text-white">
+          
+          <!-- Left Side - Profile Image -->
+          <div class="flex justify-center">
+            <div class="w-60 h-60 md:w-72 md:h-72  overflow-hidden border-4 border-white shadow-lg">
+              <img src="/image/jay.jpg" alt="Jayhind Pal" class="w-full h-full object-cover">
+            </div>
+          </div>
+      
+          <!-- Right Side - Information -->
+          <div class="text-center md:text-left">
+            <h1 class="text-4xl font-bold drop-shadow-lg">
+              Hi, I'm Jayhind Pal
+            </h1>
+            <h3 class="text-2xl text-gray-300 mt-4">
+              Information Technology Engineering Student
+            </h3>
+            <p class="text-gray-200 mt-4">
+              A third-year undergraduate engineering student at
+              <strong>Bansal Group Of Science And Technology Engineering College</strong>, Bhopal.
+            </p>
+      
+            <!-- Social Links -->
+            <div class="flex justify-center md:justify-start space-x-6 mt-4">
+              <a href="https://www.linkedin.com/in/jayhind-pal-4863b6289" target="_blank" class="text-gray-300 hover:text-white text-3xl">
+                <i class="uil uil-linkedin-alt"></i>
+              </a>
+              <a href="https://github.com/paljayhind2005" target="_blank" class="text-gray-300 hover:text-white text-3xl">
+                <i class="uil uil-github-alt"></i>
+              </a>
+            </div>
+      
+            <!-- Contact Button -->
+            <a href="#contact" class="inline-block mt-6 bg-pink-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg text-lg shadow-lg transition">
+              Contact me <i class="uil uil-message ml-2"></i>
+            </a>
+          </div>
+      
+        </div>
+      </section>
+      
+      
+
+      <!--======================= About========================-->
+
+      <section class="about section py-20 bg-gray-50" id="about">
+        <h2 class="section__title text-4xl font-bold text-center text-gray-800">
+          About Me
+        </h2>
+        <!-- <span class="section__subtitle text-center text-2xl text-blue-600 font-bold">
+          My Introduction
+        </span> -->
+      
+        <div class="about__container container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          <!-- About Image with hover effect -->
+          <img
+            src="/image/jay2.jpg"
+            alt="About Jay"
+            class="about__img rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105"
+          />
+      
+          <!-- About Data -->
+          <div class="about__data flex flex-col justify-center">
+            <p class="about__description text-gray-700 text-xl leading-relaxed">
+              <strong class="text-blue-600">I'm a third-year undergraduate</strong>, passionate about technology and an avid reader.I have a self-motivated and can-do attitude, thriving in challenging and dynamic environments.Seeking a competitive position to enhance my skills and contribute to a professional organization.<strong class="text-blue-600">I'm very much passionate about learning new things</strong> that interest me and help me get better.
+            </p>
+      
+            <!-- Info Cards -->
+            <div class="about__info grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
+              <div class="about text-center p-4 bg-white rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-blue-100">
+                <span class="about__info-title text-3xl font-bold text-blue-600 block">
+                  7.8+
+                </span>
+                <span class="about__info-name text-gray-600">
+                  Aggregate <br />CGPA
+                </span>
+              </div>
+      
+              <div class="about text-center p-4 bg-white rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-blue-100">
+                <span class="about__info-title text-3xl font-bold text-blue-600 block">
+                  04+
+                </span>
+                <span class="about__info-name text-gray-600">
+                  Projects
+                </span>
+              </div>
+      
+              <div class="about text-center p-4 bg-white rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-blue-100">
+                <span class="about__info-title text-3xl font-bold text-blue-600 block">
+                  01+
+                </span>
+                <span class="about__info-name text-gray-600">
+                  Year <br />Experience
+                </span>
+              </div>
+            </div>
+      
+            <!-- Download CV Button -->
+            <div class="about__buttons mt-8">
+              <a 
+                download 
+                href="/image/resume.docx" 
+                class="button button--flex bg-blue-500 text-white px-6 py-3 rounded-lg shadow-md transform transition duration-300 hover:bg-blue-600 hover:scale-105"
+              >
+                Download CV <i class="fas fa-download button__icon ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      
+
+      <!--===================== SKILLS =====================-->
+
+      <section class="skills section bg-gray-100 py-10" id="skills">
+        <h2 class="section__title text-4xl font-bold text-center text-gray-800">Skills</h2>
+        <!-- <span class="section__subtitle text-center text-2xl text-blue-600">My technical level</span> -->
+      
+        <div class="skills__container container mx-auto px-4 grid mt-10 grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <!--==================== Skill 1 =================-->
+            <div class="skills__content skills__open bg-white p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105">
+              <div class="skills__header flex justify-between items-center">
+                <i class="fas fa-pencil-ruler skills__icon text-2xl text-blue-600"></i>
+      
+                <div>
+                  <h1 class="skills__title text-2xl font-bold text-gray-800">Programming Languages</h1>
+                </div>
+      
+                <i class="uil uil-angle-down skills__arrow text-blue-600 cursor-pointer transform transition-transform duration-300 hover:rotate-180"></i>
+              </div>
+      
+              <div class="skills__list grid grid-cols-2 gap-4 mt-4">
+                <div class="skills__data">
+                  <div class="skills__titles">
+                    <h3 class="skills__name text-blue-600">
+                      <i class="devicon-c-plain skills__icon text-2xl"></i> C
+                    </h3>
+                  </div>
+                </div>
+      
+                <div class="skills__data">
+                  <div class="skills__titles">
+                    <h3 class="skills__name text-blue-600">
+                      <i class="devicon-java-plain skills__icon text-2xl"></i> Java
+                    </h3>
+                  </div>
+                </div>
+      
+                <div class="skills__data">
+                  <div class="skills__titles">
+                    <h3 class="skills__name text-blue-600">
+                      <i class="devicon-javascript-plain skills__icon text-2xl"></i> JavaScript
+                    </h3>
+                  </div>
+                </div>
+      
+                <div class="skills__data">
+                  <div class="skills__titles">
+                    <h3 class="skills__name text-blue-600">
+                      <i class="devicon-sql-plain skills__icon text-2xl"></i> SQL
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <!--==================== Skill 2 =================-->
+            <div class="skills__content skills__close bg-white p-6 rounded-lg shadow-lg mt-8 transform transition-transform duration-300 hover:scale-105">
+              <div class="skills__header flex justify-between items-center">
+                <i class="fas fa-code skills__icon text-2xl text-blue-600"></i>
+      
+                <div>
+                  <h1 class="skills__title text-2xl font-bold text-gray-800">IT Constructs</h1>
+                </div>
+      
+                <i class="uil uil-angle-down skills__arrow text-blue-600 cursor-pointer transform transition-transform duration-300 hover:rotate-180"></i>
+              </div>
+      
+              <div class="skills__list grid grid-cols-2 gap-4 mt-4">
+                <div class="skills__data">
+                  <div class="skills__titles">
+                    <h3 class="skills__name text-blue-600">
+                      <i class="devicon-database-plain skills__icon text-2xl"></i> DBMS
+                    </h3>
+                  </div>
+                </div>
+      
+                <div class="skills__data">
+                  <div class="skills__titles">
+                    <h3 class="skills__name text-blue-600">
+                      <i class="fas fa-sitemap skills__icon text-2xl"></i> DS & Algorithms
+                    </h3>
+                  </div>
+                </div>
+      
+                <div class="skills__data">
+                  <div class="skills__titles">
+                    <h3 class="skills__name text-blue-600">
+                      <i class="devicon-cplusplus-plain skills__icon text-2xl"></i> OOP
+                    </h3>
+                  </div>
+                </div>
+      
+                <div class="skills__data">
+                  <div class="skills__titles">
+                    <h3 class="skills__name text-blue-600">
+                      <i class="devicon-linux-plain skills__icon text-2xl"></i> OS
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <div>
+            <!--==================== Skill 3 =================-->
+            <div class="skills__content skills__close bg-white p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105">
+              <div class="skills__header flex justify-between items-center">
+                <i class="fas fa-swatchbook skills__icon text-2xl text-blue-600"></i>
+                <div>
+                  <h1 class="skills__title text-2xl font-bold text-gray-800">Technologies</h1>
+                </div>
+      
+                <i class="uil uil-angle-down skills__arrow text-blue-600 cursor-pointer transform transition-transform duration-300 hover:rotate-180"></i>
+              </div>
+      
+              <div class="skills__list grid grid-cols-2 gap-4 mt-4">
+                <div class="skills__data">
+                  <div class="skills__titles">
+                    <h3 class="skills__name text-blue-600">
+                      <i class="devicon-git-plain skills__icon text-2xl"></i> Git
+                    </h3>
+                  </div>
+                </div>
+      
+                <div class="skills__data">
+                  <div class="skills__titles">
+                    <h3 class="skills__name text-blue-600">
+                      <i class="devicon-mongodb-plain skills__icon text-2xl"></i> MongoDB
+                    </h3>
+                  </div>
+                </div>
+      
+                <div class="skills__data">
+                  <div class="skills__titles">
+                    <h3 class="skills__name text-blue-600">
+                      <i class="devicon-mysql-plain skills__icon text-2xl"></i> MySQL
+                    </h3>
+                  </div>
+                </div>
+      
+                <!-- <div class="skills__data">
+                  <div class="skills__titles">
+                    <h3 class="skills__name text-blue-600">
+                      <i class="devicon-nextjs-plain skills__icon text-2xl"></i> NextJs
+                    </h3>
+                  </div>
+                </div> -->
+      
+                <div class="skills__data">
+                  <div class="skills__titles">
+                    <h3 class="skills__name text-blue-600">
+                      <i class="devicon-nodejs-plain skills__icon text-2xl"></i> NodeJs
+                    </h3>
+                  </div>
+                </div>
+      
+                <div class="skills__data">
+                  <div class="skills__titles">
+                    <h3 class="skills__name text-blue-600">
+                      <i class="devicon-tailwindcss-plain skills__icon text-2xl"></i> Tailwind
+                    </h3>
+                  </div>
+                </div>
+      
+                <!-- <div class="skills__data">
+                  <div class="skills__titles">
+                    <h3 class="skills__name text-blue-600">
+                      <i class="devicon-mysql-plain skills__icon text-2xl"></i> MySQL
+                    </h3>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      
+
+      <!--==================== Qualifications ==================-->
+      
+
+      <section class="education container mx-auto px-6 py-16 relative bg-cover bg-center" 
+       style="background-image: url('https://images.pexels.com/photos/29450013/pexels-photo-29450013/free-photo-of-vibrant-abstract-digital-artwork-with-gradient.jpeg?auto=compress&cs=tinysrgb&w=600');"> -->
+  
+      <!-- Neon Gradient Overlay -->
+      <div class="absolute inset-0  opacity-50 mix-blend-overlay"></div>
+  
+      <div class=" relative text-center">
+          <h1 class="text-5xl font-extrabold text-white mb-6 animate-fade-in tracking-wide">
+              <span class="ani text-yellow-300">My Education</span>
+          </h1>
+          <p class="text-gray-200 text-lg animate-fade-in">
+              A journey of <span class="ani text-yellow-400 font-semibold">knowledge</span> and 
+              <span class="ani text-yellow-400 font-semibold">growth</span>
+          </p>
+      </div>
+  
+      <div class="max-w-3xl mx-auto mt-12 space-y-12 relative">
+          <div class="absolute top-0 left-1/2 w-1 bg-gradient-to-b from-yellow-400 to-transparent h-full transform -translate-x-1/2"></div>
+  
+          <!-- Education Cards -->
+          <div class="relative flex items-center gap-6 group">
+              <div class="flex flex-col items-center">
+                  <div class="w-6 h-6 bg-yellow-400 rounded-full animate-bounce shadow-lg"></div>
+              </div>
+              <div class="glass-card">
+                  <h2 class="text-2xl font-bold text-blue-600">10th</h2>
+                  <p class="text-gray-300"><span class="font-semibold text-purple-400">S.S. Mandir High School</span></p>
+                  <div class="flex items-center gap-2 text-gray-400 mt-2">
+                      <i class="uil uil-calendar-alt text-xl"></i>
+                      <span class="font-semibold text-yellow-400">2020</span>
+                  </div>
+              </div>
+          </div>
+  
+          <div class="relative flex items-center gap-6 group flex-row-reverse">
+              <div class="flex flex-col items-center">
+                  <div class="w-6 h-6 bg-yellow-400 rounded-full animate-bounce shadow-lg"></div>
+              </div>
+              <div class="glass-card">
+                  <h2 class="text-2xl font-bold text-blue-600">12th</h2>
+                  <p class="text-gray-300"><span class="font-semibold text-purple-400">S.S. Mandir, Harpalpur</span></p>
+                  <div class="flex items-center gap-2 text-gray-400 mt-2">
+                      <i class="uil uil-calendar-alt text-xl"></i>
+                      <span class="font-semibold text-yellow-400">2022</span>
+                  </div>
+              </div>
+          </div>
+  
+          <div class="relative flex items-center gap-6 group">
+              <div class="flex flex-col items-center">
+                  <div class="w-6 h-6 bg-yellow-400 rounded-full animate-bounce shadow-lg"></div>
+              </div>
+              <div class="glass-card">
+                  <h2 class="text-2xl font-bold text-blue-600">B.Tech IT</h2>
+                  <p class="text-gray-300"><span class="font-semibold text-purple-400">Bansal Group of Institutions, Bhopal</span></p>
+                  <div class="flex items-center gap-2 text-gray-400 mt-2">
+                      <i class="uil uil-calendar-alt text-xl"></i>
+                      <span class="font-semibold text-yellow-400">2022 - 2026</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  <!-- Tailwind Custom Styles -->
+  <style>
+      .glass-card {
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          border-radius: 10px;
+          padding: 1.5rem;
+          border-left: 4px solid #facc15;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+  
+      .glass-card:hover {
+          transform: scale(1.05);
+          box-shadow: 0px 0px 15px rgba(255, 255, 0, 0.5);
+      }
+  </style>
+  
+
+    
+
+      
+      
+      
+    
+      <!--=================== Portfolio ===================-->
+      <section class="portfolio section py-20" id="portfolio">
+        <h2 class="section__title text-4xl font-bold text-center text-gray-800 mb-2">
+            Projects
+        </h2>
+        <span class="section__subtitle block text-center text-gray-600 mb-12">
+            Most recent work
+        </span>
+    
+        <div class="portfolio__container container mx-auto px-6">
+            <div class="swiper-container">
+                <div class="swiper-wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Portfolio 1 -->
+                    <div class="portfolio__content swiper-slide bg-white p-6 rounded-lg shadow-lg transition-all hover:scale-105 relative">
+                        <div class="  relative w-full h-60">
+                            <img src="./image/education.png" 
+                                class="animation absolute w-full h-full object-cover rounded-lg shadow-lg z-10 transition-all hover:scale-105" />
+                            <!-- <img src="./image/education.png" 
+                                class=" animation i absolute w-full h-full object-cover rounded-lg shadow-lg z-0 top-3 left-3 opacity-80" /> -->
+                        </div>
+                        <h3 class="portfolio__title text-xl font-semibold text-gray-800 mt-4">
+                            Education-Web-Applicationn
+                        </h3>
+                        <p class="portfolio__description text-gray-600 text-sm">
+                          An interactive education website providing engaging courses, resources, and tools to enhance learning and skill development
+                        </p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/paljayhind2005/Education-Web-Applicationn" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+                                GitHub
+                            </a>
+                            <a href="https://paljayhind2005.github.io/Education-Web-Applicationn/" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+                                See Live
+                            </a>
+                        </div>
+                    </div>
+    
+                    <!-- Portfolio 2 -->
+                    <div class="portfolio__content swiper-slide bg-white p-6 rounded-lg shadow-lg transition-all hover:scale-105 relative">
+                        <div class="relative w-full h-60">
+                            <img src="./image/shoes.png" 
+                                class="img3 absolute w-full h-full object-cover rounded-lg shadow-lg z-10 transition-all hover:scale-105" />
+                            <!-- <img src="./image/shoes.png" 
+                                class="img3 absolute w-full h-full object-cover rounded-lg shadow-lg z-0 top-3 left-3 opacity-80" /> -->
+                        </div>
+                        <h3 class="portfolio__title text-xl font-semibold text-gray-800 mt-4">
+                            E-Commerce
+                        </h3>
+                        <p class="portfolio__description text-gray-600 text-sm">
+                          A stylish eCommerce website offering premium shoes with the latest trends, comfortable designs, and secure shopping
+                        </p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/paljayhind2005/E-commerce" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+                                GitHub
+                            </a>
+                            <a href="http://paljayhind2005.github.io/E-commerce/" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+                                See Live
+                            </a>
+                        </div>
+                    </div>
+    
+                    <!-- Portfolio 3 -->
+                    <div class="portfolio__content swiper-slide bg-white p-6 rounded-lg shadow-lg transition-all hover:scale-105 relative">
+                        <div class="relative w-full h-60">
+                            <img src="https://images.unsplash.com/photo-1496449903678-68ddcb189a24?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHJhbmRvbXxlbnwwfHwwfHx8MA%3D%3D" 
+                                class="img absolute w-full h-full object-cover rounded-lg shadow-lg z-10 transition-all hover:scale-105" />
+                            <img src="https://plus.unsplash.com/premium_vector-1740899291728-96b3ca153512?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxpbGx1c3RyYXRpb25zLWZlZWR8NHx8fGVufDB8fHx8fA%3D%3D" 
+                                class="img absolute w-full h-full object-cover rounded-lg shadow-lg z-0 top-3 left-3 opacity-80" />
+                        </div>
+                        <h3 class="portfolio__title text-xl font-semibold text-gray-800 mt-4">
+                            Designing the Portfolio
+                        </h3>
+                        <p class="portfolio__description text-gray-600 text-sm">
+                            A modern and responsive design for this portfolio showcasing my skills and projects in a visually appealing way
+                        </p>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://github.com/Venkateeshh/Spotify-Clone" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+                                GitHub
+                            </a>
+                            <a href="https://venkateeshh.github.io/Spotify-Clone/" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+                                See Live
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Navigation Arrows -->
+                <div class="swiper-button-next text-gray-700"></div>
+                <div class="swiper-button-prev text-gray-700"></div>
+    
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <!--=================== Service ===================-->
+    <section class="services section py-20 bg-gradient-to-b from-blue-50 to-white" id="services">
+      <h2 class="section__title text-4xl font-extrabold text-center text-gray-900">
+        My Services
+      </h2>
+      <span class="section__subtitle block text-center text-2xl text-blue-600 mt-2">
+        What I Offer
+      </span>
+    
+      <div class="services__container container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-10 mt-10">
+        <!-- Service 1: Frontend Development -->
+        <div class="service__card relative bg-white p-6 rounded-2xl shadow-xl transition-all transform hover:scale-105 hover:shadow-2xl border border-gray-200">
+          <div class="relative">
+            <img src="/image/jay2.jpg" alt="Frontend Development" 
+                 class="service__img w-32 h-32 mx-auto rounded-full border-4 border-blue-500 shadow-lg transition-all hover:scale-110">
+          </div>
+          <h3 class="service__title text-2xl font-semibold text-gray-900 text-center mt-4">
+            Frontend Development
+          </h3>
+          <p class="service__name text-lg text-blue-600 text-center mt-2">
+            Name: <strong>Jayhind Pal</strong>
+          </p>
+          <p class="service__specialization text-lg text-gray-600 text-center mt-2">
+            Expertise: UI/UX Design & React.js
+          </p>
+          <p class="service__description text-gray-700 text-center mt-4 leading-relaxed">
+            I specialize in building <strong>modern, interactive, and responsive</strong> user interfaces. Whether it's a website or a web app, I ensure it looks great and works flawlessly.
+          </p>
+          <div class="flex justify-center gap-4 mt-4">
+            <a href="https://www.linkedin.com/in/jayhind-pal" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+              LinkedIn
+            </a>
+            <a href="https://github.com/jayhind-pal" target="_blank" class="bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-900 transition">
+              GitHub
+            </a>
+          </div>
+        </div>
+    
+        <!-- Service 2: Backend Development -->
+        <div class="service__card relative bg-white p-6 rounded-2xl shadow-xl transition-all transform hover:scale-105 hover:shadow-2xl border border-gray-200">
+          <div class="relative">
+            <img src="/image/hariom.jpg" alt="Backend Development" 
+                 class="service__img w-32 h-32 mx-auto rounded-full border-4 border-blue-500 shadow-lg transition-all hover:scale-110">
+          </div>
+          <h3 class="service__title text-2xl font-semibold text-gray-900 text-center mt-4">
+            Backend Development
+          </h3>
+          <p class="service__name text-lg text-blue-600 text-center mt-2">
+            Name: <strong>Hariom Kumbhkar</strong>
+          </p>
+          <p class="service__specialization text-lg text-gray-600 text-center mt-2">
+            Expertise: Node.js & Database Systems
+          </p>
+          <p class="service__description text-gray-700 text-center mt-4 leading-relaxed">
+            I build <strong>secure, high-performance, and scalable</strong> backend systems. From APIs to database design, I ensure your application runs smoothly and efficiently.
+          </p>
+          <div class="flex justify-center gap-4 mt-4">
+            <a href="https://www.linkedin.com/in/hariom-kumbhkar-700147277" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+              LinkedIn
+            </a>
+            <a href="https://github.com/hariom24-code" target="_blank" class="bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-900 transition">
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    
+      <div class="services__management mt-16 text-center px-6">
+        <h3 class="services__management-title text-3xl font-bold text-gray-900">
+          End-to-End Project Delivery
+        </h3>
+        <p class="services__management-description text-lg text-gray-700 mt-4 max-w-3xl mx-auto leading-relaxed">
+          I handle everything from <strong>planning and development to deployment and maintenance</strong>. My goal is to deliver high-quality software that meets your needs on time and within budget. Let's build something amazing together!
+        </p>
+      </div>
+    </section>
+     
+  
+  
+    
+    
+    
+
+      <!--===================== Contact Me =====================-->
+      
+    <section class="contact section py-20 bg-gradient-to-b from-pink to-red-100" id="contact">
+        <h2 class="section__title text-3xl font-bold text-center text-gray-800">Contact Me</h2>
+        <span class="section__subtitle text-center text-gray-600 block">Get in touch</span>
+    
+        <div class="contact__container container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+            <!-- Contact Info -->
+            <div>
+                <div class="contact__information bg-white p-6 rounded-lg shadow-lg flex items-center gap-4">
+                    <i class="uil uil-calling text-3xl text-blue-600"></i>
+                    <div>
+                        <h3 class="contact__title text-xl font-bold text-gray-800">Phone</h3>
+                        <a href="tel:+917879898216" class="contact__subtitle text-gray-600 hover:text-blue-500 transition">
+                            +91 78798 98216
+                        </a>
+                    </div>
+                </div>
+    
+                <div class="contact__information bg-white p-6 rounded-lg shadow-lg flex items-center gap-4 mt-6">
+                    <i class="uil uil-envelope text-3xl text-blue-600"></i>
+                    <div>
+                        <h3 class="contact__title text-xl font-bold text-gray-800">Email</h3>
+                        <a href="mailto:pjayhind882@gmail.com" class="contact__subtitle text-gray-600 hover:text-blue-500 transition">
+                            pjayhind882@gmail.com
+                        </a>
+                    </div>
+                </div>
+    
+                <div class="contact__information bg-white p-6 rounded-lg shadow-lg flex items-center gap-4 mt-6">
+                    <i class="uil uil-map-marker text-3xl text-blue-600"></i>
+                    <div>
+                        <h3 class="contact__title text-xl font-bold text-gray-800">Location</h3>
+                        <span class="contact__subtitle text-gray-600">Bhopal, M.P, India</span>
+                    </div>
+                </div>
+    
+                <!-- WhatsApp Contact -->
+                <div class="contact__information bg-white p-6 rounded-lg shadow-lg flex items-center gap-4 mt-6">
+                    <i class="uil uil-whatsapp text-3xl text-green-600"></i>
+                    <div>
+                        <h3 class="contact__title text-xl font-bold text-gray-800">WhatsApp</h3>
+                        <a href="https://wa.me/917879898216?text=Hello%20Jayhind,%20I%20want%20to%20get%20in%20touch!" 
+                           class="contact__subtitle text-gray-600 hover:text-green-500 transition" target="_blank">
+                            Chat on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Contact Form with Blue-Tinted Video Background -->
+            <div class="relative rounded-lg overflow-hidden shadow-lg">
+                <!-- Background Video -->
+                <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-50">
+                    <source src="https://cdn.dribbble.com/userupload/13572814/file/original-bb260d39090a10392f06c17360955c87.mp4" type="video/mp4">
+                </video>
+    
+                <!-- Sky Blue Overlay for Better Visibility -->
+                <div class="absolute inset-0 bg-blue-500 opacity-40"></div>
+    
+                <!-- Contact Form -->
+                <form id="contactForm" class="relative contact__form grid grid-cols-1 gap-6 bg-white bg-opacity-70 p-6 rounded-lg shadow-lg z-10">
+                    <div class="contact__inputs grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="contact__content">
+                            <label class="content__label text-gray-800">Name</label>
+                            <input type="text" id="name" class="contact__input bg-gray-100 p-3 rounded-lg w-full border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none" required />
+                        </div>
+    
+                        <div class="contact__content">
+                            <label class="content__label text-gray-800">Email</label>
+                            <input type="email" id="email" class="contact__input bg-gray-100 p-3 rounded-lg w-full border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none" required />
+                        </div>
+                    </div>
+    
+                    <div class="contact__content">
+                        <label class="content__label text-gray-800">Message</label>
+                        <textarea id="message" cols="0" rows="5" class="contact__input bg-gray-100 p-3 rounded-lg w-full border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none" required></textarea>
+                    </div>
+    
+                    <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition flex items-center justify-center gap-2">
+                        Send Message <i class="uil uil-message"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    
+  
+      <!-- JavaScript to Handle Form Submission -->
+      <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+          event.preventDefault(); // Prevents the page from reloading
+      
+          // Get form values
+          let name = document.getElementById("name").value;
+          let email = document.getElementById("email").value;
+          let message = document.getElementById("message").value;
+      
+          // Check if all fields are filled
+          if (name === "" || email === "" || message === "") {
+            alert("Please fill in all fields.");
+            return;
+          }
+      
+          // Show success message
+          alert("Your message has been sent successfully!\nWe will contact you soon.");
+          
+          // Optionally, reset the form
+          document.getElementById("contactForm").reset();
+        });
+      </script>
+      
+      
+    </main>
+
+    <!--================== Footer ===============-->
+    <footer class="footer bg-gray-900 text-gray-300 py-10 relative">
+      <video autoplay loop muted class="absolute inset-0 w-full h-full object-cover opacity-20">
+        <source src="https://videos.pexels.com/video-files/7385122/7385122-sd_640_360_30fps.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    
+      <div class="relative container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+        
+        <!-- Branding & Intro -->
+        <div>
+          <h1 class="footer__title text-3xl font-bold text-white">Jayhind Pal</h1>
+          <p class="footer__subtitle text-gray-400 mt-2">
+            Passionate IT Engineer | Frontend Developer <br>
+            Crafting intuitive user experiences, one line of code at a time!
+          </p>
+        </div>
+    
+        <!-- Quick Links -->
+        <ul class="footer__links space-y-3 text-lg">
+          <li>
+            <a href="#qualification" class="hover:text-blue-400 transition duration-300">🎓 My Journey</a>
+          </li>
+          <li>
+            <a href="#portfolio" class="hover:text-blue-400 transition duration-300">📂 Projects</a>
+          </li>
+          <li>
+            <a href="#contact" class="hover:text-blue-400 transition duration-300">📩 Let's Connect</a>
+          </li>
+        </ul>
+    
+        <!-- Social Links -->
+        <div>
+          <h3 class="text-xl font-semibold text-white">Let's Connect</h3>
+          <p class="text-gray-400 mt-2">Follow me on my social platforms</p>
+          <div class="flex space-x-4 mt-4">
+            
+            <a href="https://www.linkedin.com/in/jayhind-pal" class="text-gray-400 hover:text-blue-500 text-2xl transition duration-300" target="_blank">
+              <i class="uil uil-linkedin"></i>
+            </a>
+    
+            <a href="https://github.com/jayhind-pal" class="text-gray-400 hover:text-gray-300 text-2xl transition duration-300" target="_blank">
+              <i class="uil uil-github"></i>
+            </a>
+    
+            <a href="https://www.instagram.com/your_instagram_handle" class="text-gray-400 hover:text-pink-500 text-2xl transition duration-300" target="_blank">
+              <i class="uil uil-instagram"></i>
+            </a>
+    
+            <a href="https://wa.me/917879898216" class="text-gray-400 hover:text-green-500 text-2xl transition duration-300" target="_blank">
+              <i class="uil uil-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+    
+      </div>
+    
+      <p class="relative text-center text-gray-500 mt-8 text-sm">
+        Built with passion  Designed by <span class="text-blue-400">@ 2025 Jayhind Pal</span> All rights reserved
+      </p>
+    </footer>
+    
+    
+    
+
+    <!--================== SCROLL TOP ==================-->
+    <!-- Scroll to Top Button -->
+<!-- Scroll to Top Button -->
+<a href="#" id="scroll-up" 
+   class="fixed bottom-6 right-6 bg-red-500 text-red p-3 rounded-full shadow-lg hidden transition-all transform hover:scale-110 hover:bg-blue-600">
+    <i class="uil uil-arrow-up text-2xl"></i>
+</a>
+
+<!-- JavaScript to Show/Hide Scroll Button -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const scrollUp = document.getElementById("scroll-up");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        scrollUp.classList.remove("hidden");
+      } else {
+        scrollUp.classList.add("hidden");
+      }
+    });
+
+    scrollUp.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  });
+</script>
+
+
+<!-- JavaScript to Show/Hide Scroll Button -->
+<script>
+const scrollUp = document.getElementById("scroll-up");
+
+window.addEventListener("scroll", () => {
+ if (window.scrollY > 200) {
+   scrollUp.classList.remove("hidden");
+ } else {
+   scrollUp.classList.add("hidden");
+ }
+});
+</script>
+
+
+    <script type="text/javascript" src="assets/swiper-bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/2205d59d52.js" crossorigin="anonymous"></script>
+    <script src="assets/ptj.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
+    
+    <script  type="text/javascript"  src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
